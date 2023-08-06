@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'python'
+        label 'ods/jenkins-agent-python'
     }
 
     triggers {
