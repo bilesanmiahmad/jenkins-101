@@ -9,10 +9,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                apt update
-                apt install python3-pip
-                cd myapp
-                pip install -r requirements.txt
+                echo "The node name for this pipeline is ${NODE_NAME}"
                 '''
             }
         }
@@ -20,9 +17,10 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
+                echo "The current workspace is ${WORKSPACE}"
+                pwd
                 cd myapp
-                python3 hello.py
-                python3 hello.py --name=Ahmad
+                pwd
                 '''
             }
         }
