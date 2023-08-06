@@ -10,6 +10,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 echo "The node name for this pipeline is ${NODE_NAME}"
+                cat /etc/os-release
                 '''
             }
         }
